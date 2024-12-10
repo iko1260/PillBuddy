@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
     container: {
@@ -24,17 +26,46 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "rgba(0, 0, 0, 0.7)",
     },
-    modalContainer: {
+    popupContainer: {
+        width: width * 0.8,
         backgroundColor: "#fff",
         borderRadius: 10,
         padding: 20,
-        width: "80%",
         alignItems: "center",
+        elevation: 5,
+        shadowColor: "#000",
+        shadowOpacity: 0.25,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 4,
+    },
+    closeIconContainer: {
+        position: "absolute",
+        top: 10,
+        left: 10,
+        zIndex: 1,
+    },
+    closeIcon: {
+        width: 24,
+        height: 24,
+        resizeMode: "contain",
+    },
+    shareIconContainer: {
+        position: "absolute",
+        top: 10,
+        right: 10,
+        zIndex: 1,
+    },
+    shareIcon: {
+        width: 24,
+        height: 24,
+        resizeMode: "contain",
     },
     modalImage: {
-        width: 200,
-        height: 200,
-        marginBottom: 20,
+        width: "100%",
+        height: 150,
+        marginTop: 30,
+        marginBottom: 10,
+        borderRadius: 10,
     },
     modalText: {
         fontSize: 18,
@@ -42,17 +73,13 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         textAlign: "center",
     },
-    closeButton: {
-        backgroundColor: "#198679",
-        borderRadius: 5,
-        padding: 10,
-        alignItems: "center",
-        width: "50%",
+    medicationsContainer: {
+        marginBottom: 20,
     },
-    closeButtonText: {
-        color: "#fff",
+    medicationText: {
         fontSize: 16,
-        fontWeight: "bold",
+        color: "#555",
+        textAlign: "center",
     },
 });
 
